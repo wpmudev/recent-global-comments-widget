@@ -1,22 +1,19 @@
-Plugin Name: Recent Global Comments Widget
-Author: Andrew Billits
+=== Recent Global Comments Widget ===
+Authors: Ivan Shaovchev, Andrew Billits (Incsub)
 
-Change Log:
-----------------------------------------------------------------------
-----------------------------------------------------------------------
+== Changelog ==
 
-1.0.3 - 06/01/2009
-----------------------------------------------------------------------
-- Fixed avatar display issue
+= 1.0.4 =
+* Compatibility update for WordPress 3.1
 
-1.0.2 - 06/01/2009
-----------------------------------------------------------------------
-- Fixed avatar link issue
+= 1.0.3 =
+* Fixed avatar display issue
 
-1.0.1 - 04/13/2009
-----------------------------------------------------------------------
-- Fixed bug that was resulted in spam comments being displayed
+= 1.0.2 =
+* Fixed avatar link issue
 
-1.0.0 - 03/26/2009
-----------------------------------------------------------------------
-- Initial release
+= 1.0.1 =
+* Fixed bug that was resulted in spam comments being displayed
+
+= 1.0.0 =
+* Initial Release
