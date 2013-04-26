@@ -5,7 +5,7 @@ Plugin URI: http://premium.wpmudev.org/project/recent-global-comments-widget
 Description: Display all the latest comments from across your entire WordPress Multisite network - using a simple but powerful widget!
 Author: Ivan Shaovchev & Andrew Billits (Incsub)
 Author URI: http://ivan.sh
-Version: 1.0.4
+Version: 1.0.4.1
 Network: true
 WDP ID: 65
 */
@@ -26,6 +26,9 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+
+// Support for WPMU DEV Dashboard plugin
+include_once( dirname(__FILE__) . '/lib/dash-notices/wpmudev-dash-notification.php');
 
 //------------------------------------------------------------------------//
 //---Config---------------------------------------------------------------//
@@ -49,11 +52,11 @@ function widget_recent_global_comments_init() {
 		global $wpdb;
 		$options = $newoptions = get_option('widget_recent_global_comments');
 		if ( isset( $_POST['recent-global-comments-submit'] ) ) {
-			$newoptions['recent-global-comments-title'] = $_POST['recent-global-comments-title'];
-			$newoptions['recent-global-comments-number'] = $_POST['recent-global-comments-number'];
-			$newoptions['recent-global-comments-content-characters'] = $_POST['recent-global-comments-content-characters'];
-			$newoptions['recent-global-comments-avatars'] = $_POST['recent-global-comments-avatars'];
-			$newoptions['recent-global-comments-avatar-size'] = $_POST['recent-global-comments-avatar-size'];
+			$newoptions['recent-global-comments-title'] 				= sanitize_text_field($_POST['recent-global-comments-title']);
+			$newoptions['recent-global-comments-number'] 				= intval($_POST['recent-global-comments-number']);
+			$newoptions['recent-global-comments-content-characters'] 	= intval($_POST['recent-global-comments-content-characters']);
+			$newoptions['recent-global-comments-avatars'] 				= sanitize_text_field($_POST['recent-global-comments-avatars']);
+			$newoptions['recent-global-comments-avatar-size'] 			= intval($_POST['recent-global-comments-avatar-size']);
 		}
 		if ( $options != $newoptions ) {
 			$options = $newoptions;
@@ -64,7 +67,7 @@ function widget_recent_global_comments_init() {
         <div style="text-align:left">
 
             <label for="recent-global-comments-title" style="line-height:35px;display:block;"><?php _e('Title', 'widgets'); ?>:<br />
-            <input class="widefat" id="recent-global-comments-title" name="recent-global-comments-title" value="<?php echo $options['recent-global-comments-title']; ?>" type="text" style="width:95%;">
+            <input class="widefat" id="recent-global-comments-title" name="recent-global-comments-title" value="<?php echo sanitize_text_field($options['recent-global-comments-title']); ?>" type="text" style="width:95%;">
             </select>
             </label>
             <label for="recent-global-comments-number" style="line-height:35px;display:block;"><?php _e('Number', 'widgets'); ?>:<br />
@@ -76,7 +79,7 @@ function widget_recent_global_comments_init() {
                 $counter = 0;
                 for ( $counter = 1; $counter <= 25; $counter += 1) {
                     ?>
-                    <option value="<?php echo $counter; ?>" <?php if ($options['recent-global-comments-number'] == $counter){ echo 'selected="selected"'; } ?> ><?php echo $counter; ?></option>
+                    <option value="<?php echo $counter; ?>" <?php if (intval($options['recent-global-comments-number']) == $counter){ echo 'selected="selected"'; } ?> ><?php echo $counter; ?></option>
                     <?php
                 }
             ?>
@@ -91,7 +94,7 @@ function widget_recent_global_comments_init() {
                 $counter = 0;
                 for ( $counter = 1; $counter <= 500; $counter += 1) {
                     ?>
-                    <option value="<?php echo $counter; ?>" <?php if ($options['recent-global-comments-content-characters'] == $counter){ echo 'selected="selected"'; } ?> ><?php echo $counter; ?></option>
+                    <option value="<?php echo $counter; ?>" <?php if (intval($options['recent-global-comments-content-characters']) == $counter){ echo 'selected="selected"'; } ?> ><?php echo $counter; ?></option>
                     <?php
                 }
             ?>
@@ -135,7 +138,7 @@ function widget_recent_global_comments_init() {
             <br />
             <?php
 				//=================================================//
-				$query = "SELECT * FROM " . $wpdb->base_prefix . "site_comments WHERE blog_public = '1' AND comment_approved = '1' AND comment_type != 'pingback' ORDER BY comment_date_stamp DESC LIMIT " . $options['recent-global-comments-number'];
+				$query = $wpdb->prepare("SELECT * FROM " . $wpdb->base_prefix . "site_comments WHERE blog_public = '1' AND comment_approved = '1' AND comment_type != 'pingback' ORDER BY comment_date_stamp DESC LIMIT %d", $options['recent-global-comments-number']);
 				$comments = $wpdb->get_results( $query, ARRAY_A );
 				if (count($comments) > 0){
 					echo '<ul>';
@@ -175,16 +178,3 @@ function widget_recent_global_comments_init() {
 }
 
 add_action('widgets_init', 'widget_recent_global_comments_init');
-
-/*
- * Update Notifications Notice
- */
-if ( !function_exists( 'wdp_un_check' ) ):
-function wdp_un_check() {
-    if ( !class_exists('WPMUDEV_Update_Notifications') && current_user_can('edit_users') )
-        echo '<div class="error fade"><p>' . __('Please install the latest version of <a href="http://premium.wpmudev.org/project/update-notifications/" title="Download Now &raquo;">our free Update Notifications plugin</a> which helps you stay up-to-date with the most stable, secure versions of WPMU DEV themes and plugins. <a href="http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/">More information &raquo;</a>', 'wpmudev') . '</a></p></div>';
-}
-add_action( 'admin_notices', 'wdp_un_check', 5 );
-add_action( 'network_admin_notices', 'wdp_un_check', 5 );
-endif; 
-?>

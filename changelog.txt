@@ -3,6 +3,10 @@ Authors: Ivan Shaovchev, Andrew Billits (Incsub)
 
 == Changelog ==
 
+= 1.0.4.1 =
+* Security patch
+* Update WPMU DEV Update Notification
+
 = 1.0.4 =
 * Compatibility update for WordPress 3.1
 
