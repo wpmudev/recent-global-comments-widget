@@ -1,0 +1,107 @@
+# Translation of the WordPress plugin Recent Global Comments Widget 1.0.4.2 by Paul Menard (Incsub).
+# Copyright (C) 2013 Paul Menard (Incsub)
+# This file is distributed under the same license as the Recent Global Comments Widget package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Recent Global Comments Widget 1.0.4.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/recent-global-comments-widget\n"
+"POT-Creation-Date: 2013-10-10 13:59-0500\n"
+"PO-Revision-Date: 2013-10-10 15:00-0500\n"
+"Last-Translator: Paul Menard <paul@codehooligans.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+
+#: lib/dash-notices/wpmudev-dash-notification.php:57
+#, php-format
+msgid "Easily get updates, support, and one-click WPMU DEV plugin/theme installations right from in your dashboard - <strong><a href=\"%s\" title=\"Install Now &raquo;\">install the free WPMU DEV Dashboard plugin</a></strong>. &nbsp;&nbsp;&nbsp;<small><a href=\"http://premium.wpmudev.org/wpmu-dev/update-notifications-plugin-information/\">(find out more)</a></small>"
+msgstr ""
+
+#: lib/dash-notices/wpmudev-dash-notification.php:61
+#, php-format
+msgid "Updates, Support, Premium Plugins, Community - <strong><a href=\"%s\" title=\"Activate Now &raquo;\">activate the WPMU DEV Dashboard plugin now</a></strong>."
+msgstr ""
+
+#: recent-global-comments-widget.php:79
+msgid "Title"
+msgstr ""
+
+#: recent-global-comments-widget.php:83
+msgid "Number"
+msgstr ""
+
+#: recent-global-comments-widget.php:98
+msgid "Content Characters"
+msgstr ""
+
+#: recent-global-comments-widget.php:113
+msgid "Avatars"
+msgstr ""
+
+#: recent-global-comments-widget.php:115
+msgid "Show"
+msgstr ""
+
+#: recent-global-comments-widget.php:116
+msgid "Hide"
+msgstr ""
+
+#: recent-global-comments-widget.php:119
+msgid "Avatar Size"
+msgstr ""
+
+#: recent-global-comments-widget.php:121
+msgid "16px"
+msgstr ""
+
+#: recent-global-comments-widget.php:122
+msgid "32px"
+msgstr ""
+
+#: recent-global-comments-widget.php:123
+msgid "48px"
+msgstr ""
+
+#: recent-global-comments-widget.php:124
+msgid "96px"
+msgstr ""
+
+#: recent-global-comments-widget.php:125
+msgid "128px"
+msgstr ""
+
+#: recent-global-comments-widget.php:167
+msgid "More"
+msgstr ""
+
+#: recent-global-comments-widget.php:181
+#: recent-global-comments-widget.php:182
+#: recent-global-comments-widget.php:185
+#: recent-global-comments-widget.php:186
+msgid "Recent Global Comments"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Recent Global Comments Widget"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://premium.wpmudev.org/project/recent-global-comments-widget"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Display all the latest comments from across your entire WordPress Multisite network - using a simple but powerful widget!"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Paul Menard (Incsub)"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://ivan.sh"
+msgstr ""
+
