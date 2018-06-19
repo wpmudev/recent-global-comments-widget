@@ -1,102 +1,83 @@
-# Recent Global Posts Widget
+# Recent Comments Widget
 
 **INACTIVE NOTICE: This plugin is unsupported by WPMUDEV, we've published it here for those technical types who might want to fork and maintain it for their needs.**
 
-Show recent posts from all the sites across an entire network – hugely powerful, massively configurable.
 
-* Set the number of posts displayed 
-* Display avatars and preset avatar size 
-* Display latest posts from across a network 
-* Includes widget for displaying latest posts 
-* Set number of title and content characters 
-* Display custom post types 
+Display all the latest comments from across an entire Multisite network using a simple powerful widget.
 
-## Recent Global Posts Widget shows all the latest posts from across your entire Multisite or BuddyPress network on your main site – simply, efficiently and quickly.
+* Displays comments from across a network 
+* Set number of comments displayed 
+* Choose number of characters 
+* Powered by Comment Indexer 
+* Display avatars 
+* Preset avatar size 
 
-### Amazing Post Indexer Extension
+## Recent Comments Widget brings all the latest comments from across your entire network to your main site.
 
-##### This simple powerful plugin allows you to:
+### Advanced Comments for Multisite
 
-* Use a simple widget to display the **latest posts across your entire network**
-* Choice of displaying **title + content, title only or content only**
-* Option to change the** number of posts displayed  
-**
-* Set **number of title and content characters allowed**
-* Option to **display avatars** and preset avatar size
-* Ability to **display custom post types**
+Using the incredible power of Comment Indexer, this widget allows you to display a list of all the latest comments from across your entire network on any main site widget area.
 
-### Familiar Settings
+##### Features for this simple but powerful plugin include:
 
-A Recent Global Posts Widget id added to** ‘**Widgets’ in the dashboard of your main site.
+* Displays comments from across your entire network
+* Option to change the number of comments displayed
+* Choose number of characters
+* Display avatars
+* Preset avatar size
 
-![Recent Global Posts Widget - Widget Settings][35]
+### Drag, Drop and Configure
 
-Drag-n-drop to activate and simple configuration
+Drop the Recent Global Comments widget into any** **of the widget areas on the main site of your network.
 
-Drag the Recent Global Posts Widget into your sidebar, choose your configuration options and the latest posts from across your entire network will be pulled into your main site.
+![Recent Global Comment widget][35]
 
-![Recent Global Posts Widget In Sidebar][36]
+Choose settings and the latest comments will be pulled onto your network homepage
 
-A powerful tool for discovering new content
+Create a more connected network by sharing comments from across your entire network.
 
-Recent Global Posts Widget adds a fun way for users to see and discover new content from across your entire network.
-
+For help with installing plugins please refer to our [Plugin installation guide.][36]
 
 ### To Install:
 
-1\. Install the Post Indexer
+1\. Install the Comment Indexer
 
-2.  Install the Recent Posts Plugin.
+* The Comment Indexer is designed to index comment from the time it is installed on your network and needs to be installed for the Recent Global Comments Widget plugin to work.
+* The Comment Indexer can’t index commentss that were published prior to being installed. i.e. _comments published prior to it being installed won’t display in your Recent Global Comment Widget._
 
-* Once uploaded visit **Network Admin -> Plugins** to Network Activate the Recent Global Posts Widget Plugin.
-* Your Recent Global Post widget is added to **Appearance > Widgets **of your main site.
-* By default, the widget is available only on the main site of your network. This behavior can be changed by following the instructions below to edit your _wp-config.php_ file.
-* The Recent Global posts widget list public posts only.  Posts from privates sites aren’t displayed.
+2\. Install the Recent Comments Plugin.
 
-3.  Install the Avatars plugin (if you want to display avatars).
+* Once uploaded visit **Network Admin -> Plugins** to Network Activate the Recent Global Comments Widget Plugin.
+* Your Recent Global Comment widget is added to **Appearance > Widgets **of your main site.
+* By default, the widget is available only on the main site of your network. This behavior can be changed by following the instructions below to edit your **widget-recent-global-comments.php**
+* The Recent Global comment widget list comments on public blogs only. Comments from privates sites aren’t displayed.
 
-### To Use:
-
-1.  Once installed you just go **Appearance > Widgets.**
-
-2.  Add the Recent Global posts widget to your sidebar.
-
-3\. Check out the configuration options below:
-
-![Recent Global Posts Widget - Widget Settings][35]
-
-Once configured, it could look like this in your sidebar:
-
-![Recent Global Posts Widget In Sidebar][36]
+3\. Install the avatars plugin (if you want to display avatars).
 
 ### Enabling Widget for all sites
 
-By default the Recent Global Posts widget is only enabled for use by the man site.
+By default the Recent Global Comments widget is only enabled for use by the main site.
 
-You can enable it for all sites on your network as follows:
+Here’s how you can enable it for all sites on your network:
 
-1\. Open up the ****wp-config.php** **in the root of your WordPress install
+1.  Open up **widget-recent-global-comments.php **using a text editing program like [EditPlus][39] or [Notepad++][40]
 
-2\. Just before the line that says _That’s all, stop editing!_, add the following:
-    
-    
-    define('RECENT_GLOBAL_POSTS_WIDGET_MAIN_BLOG_ONLY', false);
+2.  Change ‘yes’ to ‘no’ in the following line:
 
-3\. Save and re-upload your amended wp-config.php file
+$recent_global_comments_widget_main_blog_only = ‘yes’;
 
-### Recent Global Posts Widget
+3.  Save your amended **widget-recent-global-comments.php **and use this file when you upload **widget-recent-global-comments **directory to **wp-content/plugins/ **
 
-#### Quality development and features including
+![Editing the php file][41]
 
-* Display latest posts from across your network on main site 
-* Bundled with simple widget to display latest posts 
-* Choice of displaying title and content, title only or content only 
-* Option to change the number of posts displayed 
-* Set number of title and content characters allowed 
-* Option to display avatars and preset avatar size 
-* Display custom post types 
-* Greater control over your user experience 
-* Simple configuration and easy to use
+### To Use:
 
-[35]: https://premium.wpmudev.org/wp-content/uploads/2009/03/recent-global-posts-widget-3050-widget-settings.png
-[36]: https://premium.wpmudev.org/wp-content/uploads/2009/03/recent-global-posts-widget-3050-front.png
+1.  Once installed you just go **Appearance > Widgets**
+
+2.  Add the Recent Global comments widget to your sidebar and select your configuration options.
+
+![Recent Global Comment widget][42]
+
+[35]: https://premium.wpmudev.org/wp-content/uploads/2009/03/recent-global-comments-widget.png
+[41]: https://premium.wpmudev.org/wp-content/uploads/2009/03/recent-global-comments-widget-config.png
+[42]: https://premium.wpmudev.org/wp-content/uploads/2009/03/recent-global-comments-widget1.png
